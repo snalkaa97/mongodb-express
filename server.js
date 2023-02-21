@@ -18,7 +18,7 @@ const Role = require('./models/Role/RoleModel');
 // mongoose.set('strictQuery', false);
 mongoose.set('strictQuery', true);
 const main = async () => {
-    await mongoose.connect('mongodb://localhost:27017/backend-express',{
+    await mongoose.connect(`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@localhost:27017/?authMechanism=DEFAULT`,{
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
